@@ -174,17 +174,20 @@ def main() -> None:
 
     current_balance = detect_current_wallet_balance(lines)
 
+    print("\n")
     print("====== 统计结果（基于 cost.md）======")
-    print(f"市场交易获得余额总额：{total_market_income:.2f} 元")
-    print(f"按九折折算的市场交易成本：{cost_from_market:.2f} 元")
-    print(f"非市场直付总额（支付宝/微信/银行卡等）：{direct_external:.2f} 元")
+    print(f"倒余额获得余额总额：{total_market_income:.2f} 元")
+    print(f"按九折计算的倒余额成本：{cost_from_market:.2f} 元")
+    print(f"直充直购总额（支付宝/微信/银行卡等）：{direct_external:.2f} 元")
     print("-----------------------------------")
-    print(f"估算累计总成本：{total_cost:.2f} 元")
+    print(f"估算累计总花费：{total_cost:.2f} 元")
     if current_balance is not None:
         print(f"当前 Steam 钱包余额（按账单推测）：{current_balance:.2f} 元")
     else:
         print("未能从账单中可靠推断当前 Steam 钱包余额。")
-
+    print("如统计明显有误，请检查账单是否完整粘贴")
+    print("=====================================")
+    print("\n")
 
 if __name__ == "__main__":
     main()
